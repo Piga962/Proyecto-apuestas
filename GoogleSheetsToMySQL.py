@@ -21,11 +21,11 @@ data = GetSpreadsheetData('Prediccion_de_apuestas', 0)
 def WriteToMySQLTable(sql_data, tableName):
     try:
         connection = mysql.connector.connect(
+            host=mc.host,
             user=mc.user,
             password=mc.password,
-            host=mc.host,
             #port=mc.port,
-            #database=mc.database
+            database=mc.database
         )
         # sql_drop = "DROP TABLE IF EXISTS {}".format(tableName)
         # sql_create_table = """CREATE TABLE {}(
